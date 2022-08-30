@@ -2,6 +2,7 @@ from mysqlconnection import connectToMySQL
 
 class User:
     def __init__(self, data ):
+        self.id = data['id']
         self.first_name = data['first_name']
         self.last_name = data['last_name']
         self.email = data['email']
@@ -22,7 +23,13 @@ class User:
         for user in results:
             users.append(cls(user))
         return users
-    
+
+    @classmethod
+    def get_one(cls,data):
+        query = "SELECT * FROM users WHERE id = %(id)s;"
+        result = connectToMySQL('users_schema').query_db(query, data)
+        return cls(result[0])
+
     # now we need to define a class method to save our results in the database
     @classmethod
     def save(cls, data):
