@@ -20,5 +20,12 @@ class User:
         users = []
         # iterate over the db results and create instances of users with cls
         for user in results:
-            user.append(cls(user))
+            users.append(cls(user))
         return users
+    
+    # now we need to define a class method to save our results in the database
+    @classmethod
+    def save(cls, data):
+        query = "INSERT INTO users (first_name, last_name, email, created_at, updated_at) VALUES (%(fname)s,%(lname)s, %(email)s, NOW(), NOW() );"
+
+        return connectToMySQL('users_schema').query_db(query, data)
