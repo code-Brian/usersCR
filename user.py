@@ -29,6 +29,26 @@ class User:
         query = "SELECT * FROM users WHERE id = %(id)s;"
         result = connectToMySQL('users_schema').query_db(query, data)
         return cls(result[0])
+    
+    @classmethod
+    def delete_one(cls,data):
+        query = '''
+        DELETE FROM users 
+        WHERE id = %(id)s
+        '''
+        return connectToMySQL('users_schema').query_db(query, data)
+    
+    @classmethod
+    def update(cls, data):
+        query = '''
+        UPDATE users SET 
+        first_name=%(fname)s, 
+        last_name=%(lname)s, 
+        email=%(email)s, 
+        updated_at=NOW()
+        WHERE id = %(id)s
+        '''
+        return connectToMySQL('users_schema').query_db(query, data)
 
     # now we need to define a class method to save our results in the database
     @classmethod

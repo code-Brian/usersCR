@@ -10,17 +10,17 @@
 </head>
 <body>
     <div class="d-flex flex-column justify-content-center align-items-center container bg-light p-3 mt-5" style="max-width: 55vw;">
-        <h1>Add User</h1>
-        <form action="/user/create" method="POST">
-            <!-- hidden input for created_at -->
-            <input class="form-control" type="hidden" name="created_at" value="NOW()">
+        <h1>Edit User {{user.first_name}}</h1>
+        <form action="/user/update/" method="POST">
+            <!-- hidden input for updated_at -->
+            <input class="form-control" type="hidden" name="id" value="{{user.id}}">
             <label class="form-label" for="fname">First Name</label>
-            <input class="form-control" type="text" name="fname">
+            <input class="form-control" type="text" name="fname" value="{{user.first_name}}">
             <label class="form-label" for="lname">Last Name</label>
-            <input class="form-control" type="text" name="lname">
+            <input class="form-control" type="text" name="lname" value="{{user.last_name}}">
             <label class="form-label" for="email" >Email</label>
-            <input class="form-control" type="text" name="email">
-            <input class="btn btn-success form-control mt-3" type="submit" value="Add User">
+            <input class="form-control" type="text" name="email" value="{{user.email}}">
+            <input class="btn btn-success form-control mt-3" type="submit" value="Update User">
         </form>
         <p class="d-flex justify-content-center align-items-center"><a class="btn btn-primary mt-3" href="/users/show">Users Table</a></p>
     </div>

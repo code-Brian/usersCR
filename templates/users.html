@@ -29,15 +29,15 @@
                     <td>{{user.email}}</td>
                     <td>{{user.created_at}}</td>
                     <td>
-                        <a href="/user/show/{{user.id}}">Show</a>
-                        <a href="{{user.id}}">Edit</a>
-                        <a href="{{user.id}}">Delete</a>
+                        <a class="me-2" href="/user/show/{{user.id}}">Show</a>
+                        <a class="me-2" href="/user/edit/{{user.id}}">Edit</a>
+                        <a class="me-2 btn btn-sm btn-danger" href="/user/delete/{{user.id}}">Delete</a>
                     </td>
                 </tr>
                 {% endfor %}
             </table>
         </tbody>
-        <p class="d-flex justify-content-center align-items-center"><a class="btn btn-primary" href="/">Add User</a></p>
+        <p class="d-flex justify-content-center align-items-center"><a class="btn btn-primary" href="/user/new">Add User</a></p>
     </div>
 </body>
 </html>

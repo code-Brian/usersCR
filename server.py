@@ -29,8 +29,26 @@ def show(id):
     data ={
         "id" : id
     }
-    
     return render_template('show_user.html', user = User.get_one(data))
+
+@app.route('/user/delete/<int:id>')
+def delete(id):
+    data={
+        "id": id
+    }
+    return render_template('users.html', user=User.delete_one(data))
+
+@app.route('/user/edit/<int:id>')
+def edit(id):
+    data ={
+        "id" : id
+    }
+    return render_template('edit_user.html', user=User.get_one(data))
+
+@app.route('/user/update/', methods=['POST'])
+def update():
+    User.update(request.form)
+    return redirect('/users/show/')
 
 if __name__ == '__main__':
     app.run(debug=True)
