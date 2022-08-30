@@ -9,7 +9,7 @@
     <title>Users CR</title>
 </head>
 <body>
-    <div class="container">
+    <div class="d-flex flex-column justify-content-center align-items-center container bg-light p-3 mt-5" style="max-width: 55vw;">
         <h1>Add User</h1>
         <form action="/create_user" method="POST">
             <!-- hidden input for created_at -->
@@ -20,8 +20,9 @@
             <input class="form-control" type="text" name="lname">
             <label class="form-label" for="email" >Email</label>
             <input class="form-control" type="text" name="email">
-            <input class="btn btn-success form-control mt-3" type="submit" value="Add Friend">
+            <input class="btn btn-success form-control mt-3" type="submit" value="Add User">
         </form>
+        <p class="d-flex justify-content-center align-items-center"><a class="btn btn-primary mt-3" href="/show_users_table">Users Table</a></p>
     </div>
 </body>
 </html>
