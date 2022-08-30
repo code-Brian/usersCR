@@ -1,7 +1,9 @@
 # usersCR
-This is a practice assignment for Coding Dojo
+<h1>usersCR</h1>
+<p>This is a practice assignment for Coding Dojo<p>
 <p>✔️= task completed</p>
 <p>❌ = task not complete</p>
+<h2>Goals for this assignment:</h2>
 <ul>
   <li>❌Use the users_schema created in the MySQL course</li>
   <li>❌Create a new Flask project</li>
