@@ -1,5 +1,5 @@
 # usersCR
-<h1>usersCR</h1>
+
 <p>This is a practice assignment for Coding Dojo<p>
 <p>✔️= task completed</p>
 <p>❌ = task not complete</p>
