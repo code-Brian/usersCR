@@ -1,6 +1,6 @@
+from flask_app import app
 from flask import Flask, render_template, session, request, redirect
 from flask_app.models.user import User
-from flask_app import app
 
 @app.route('/user/new')
 def index():
@@ -8,9 +8,14 @@ def index():
 
 @app.route("/user/create", methods=['POST'])
 def create_user():
+
+    if not User.validate_user(request.form):
+
+        return redirect('/user/new')
+    
     data = {
-        'fname' : request.form['fname'],
-        'lname' : request.form['lname'],
+        'first_name' : request.form['first_name'],
+        'last_name' : request.form['last_name'],
         'email' : request.form['email'],
         'created_at' : request.form['created_at']
     }
