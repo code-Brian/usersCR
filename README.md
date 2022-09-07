@@ -33,10 +33,10 @@
     - accepts input data as a dictionary
     - adds flash messages and returns true or false
 - [x] 2 Validate that there are no fields left blank
-- [ ] 3 Validate that the email is in the correct format
-- [ ] 4 Be sure to add messages to flash if there are any errors
+- [x] 3 Validate that the email is in the correct format
+- [x] 4 Be sure to add messages to flash if there are any errors
   - be sure to utilize flash message categories for clarity
-- [ ] 5 Handle the following logic in your controller:
+- [x] 5 Handle the following logic in your controller:
   - if invalid, send the user back to the create page
     - show the error messages in the page
   - if valid, carry on creating the new user and redirect to the dashboard
