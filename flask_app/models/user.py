@@ -29,10 +29,29 @@ class User:
             flash(u"Please enter a valid email address", 'email')
             is_valid = False
 
+        # if user['email'] in user_emails:
+        #     flash(u"Email address is already in use", 'email')
+        #     is_valid = False
+
+
         return is_valid
 
 
     # CLASS METHODS HERE
+
+    # @classmethod
+    # def validate_user_email(cls, data):
+    #     query = 'SELECT users.email FROM users'
+
+    #     results = connectToMySQL('users_schema').query_db(query, data)
+
+    #     user_emails = []
+
+    #     for row in results:
+    #         user_emails.append(cls(row))
+
+    #     return user_emails
+
     # define a class method which will interact with our database connection
     @classmethod
     def get_all(cls):

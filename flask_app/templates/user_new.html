@@ -27,14 +27,20 @@
         <form action="/user/create" method="POST">
             <!-- hidden input for created_at -->
             <input class="form-control" type="hidden" name="created_at" value="NOW()">
+
             <label class="form-label" for="first_name">First Name</label>
-            <input class="form-control" type="text" name="first_name">
+            <input class="form-control" type="text" name="first_name" placeholder="{{ session['first_name'] }}">
+
             <label class="form-label" for="lname">Last Name</label>
-            <input class="form-control" type="text" name="last_name">
+            <input class="form-control" type="text" name="last_name" placeholder="{{ session['last_name'] }}">
+
             <label class="form-label" for="email" >Email</label>
-            <input class="form-control" type="text" name="email">
+            <input class="form-control" type="text" name="email" placeholder="{{ session['email'] }}">
+
             <input class="btn btn-success form-control mt-3" type="submit" value="Add User">
+
         </form>
+
         <p class="d-flex justify-content-center align-items-center"><a class="btn btn-primary mt-3" href="/users/show">Users Table</a></p>
     </div>
 </body>

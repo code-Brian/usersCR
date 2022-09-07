@@ -10,8 +10,15 @@ def index():
 def create_user():
 
     if not User.validate_user(request.form):
+        if 'first_name' not in session:
+
+            session['first_name'] = request.form.get('first_name')
+            session['last_name'] = request.form.get('last_name')
+            session['email'] = request.form.get('email')
 
         return redirect('/user/new')
+
+    session.clear()
     
     data = {
         'first_name' : request.form['first_name'],
